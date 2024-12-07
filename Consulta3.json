@@ -1,0 +1,153 @@
+[
+  {
+    "QUERY PLAN": [
+  {
+    "Plan": {
+      "Node Type": "Sort",
+      "Parallel Aware": false,
+      "Async Capable": false,
+      "Startup Cost": 3140.64,
+      "Total Cost": 3141.14,
+      "Plan Rows": 200,
+      "Plan Width": 12,
+      "Actual Startup Time": 0.911,
+      "Actual Total Time": 0.912,
+      "Actual Rows": 5,
+      "Actual Loops": 1,
+      "Output": ["diagnostico_lima.edad", "(count(*))"],
+      "Sort Key": ["diagnostico_lima.edad"],
+      "Sort Method": "quicksort",
+      "Sort Space Used": 25,
+      "Sort Space Type": "Memory",
+      "Plans": [
+        {
+          "Node Type": "Aggregate",
+          "Strategy": "Hashed",
+          "Partial Mode": "Simple",
+          "Parent Relationship": "Outer",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Startup Cost": 3131.00,
+          "Total Cost": 3133.00,
+          "Plan Rows": 200,
+          "Plan Width": 12,
+          "Actual Startup Time": 0.906,
+          "Actual Total Time": 0.907,
+          "Actual Rows": 5,
+          "Actual Loops": 1,
+          "Output": ["diagnostico_lima.edad", "count(*)"],
+          "Group Key": ["diagnostico_lima.edad"],
+          "Planned Partitions": 0,
+          "HashAgg Batches": 1,
+          "Peak Memory Usage": 40,
+          "Disk Usage": 0,
+          "Plans": [
+            {
+              "Node Type": "Append",
+              "Parent Relationship": "Outer",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Startup Cost": 100.00,
+              "Total Cost": 3072.50,
+              "Plan Rows": 11700,
+              "Plan Width": 4,
+              "Actual Startup Time": 0.217,
+              "Actual Total Time": 0.897,
+              "Actual Rows": 5,
+              "Actual Loops": 1,
+              "Subplans Removed": 0,
+              "Plans": [
+                {
+                  "Node Type": "Foreign Scan",
+                  "Operation": "Select",
+                  "Parent Relationship": "Member",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Relation Name": "diagnostico_lima",
+                  "Schema": "worker1",
+                  "Alias": "diagnostico_lima",
+                  "Startup Cost": 100.00,
+                  "Total Cost": 753.50,
+                  "Plan Rows": 2925,
+                  "Plan Width": 4,
+                  "Actual Startup Time": 0.216,
+                  "Actual Total Time": 0.217,
+                  "Actual Rows": 2,
+                  "Actual Loops": 1,
+                  "Output": ["diagnostico_lima.edad"],
+                  "Remote SQL": "SELECT edad FROM public.diagnostico_lima"
+                },
+                {
+                  "Node Type": "Foreign Scan",
+                  "Operation": "Select",
+                  "Parent Relationship": "Member",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Relation Name": "diagnostico_arequipa",
+                  "Schema": "worker1",
+                  "Alias": "diagnostico_arequipa",
+                  "Startup Cost": 100.00,
+                  "Total Cost": 753.50,
+                  "Plan Rows": 2925,
+                  "Plan Width": 4,
+                  "Actual Startup Time": 0.346,
+                  "Actual Total Time": 0.346,
+                  "Actual Rows": 1,
+                  "Actual Loops": 1,
+                  "Output": ["diagnostico_arequipa.edad"],
+                  "Remote SQL": "SELECT edad FROM public.diagnostico_arequipa"
+                },
+                {
+                  "Node Type": "Foreign Scan",
+                  "Operation": "Select",
+                  "Parent Relationship": "Member",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Relation Name": "diagnostico_trujillo",
+                  "Schema": "worker2",
+                  "Alias": "diagnostico_trujillo",
+                  "Startup Cost": 100.00,
+                  "Total Cost": 753.50,
+                  "Plan Rows": 2925,
+                  "Plan Width": 4,
+                  "Actual Startup Time": 0.179,
+                  "Actual Total Time": 0.179,
+                  "Actual Rows": 1,
+                  "Actual Loops": 1,
+                  "Output": ["diagnostico_trujillo.edad"],
+                  "Remote SQL": "SELECT edad FROM public.diagnostico_trujillo"
+                },
+                {
+                  "Node Type": "Foreign Scan",
+                  "Operation": "Select",
+                  "Parent Relationship": "Member",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Relation Name": "diagnostico_cusco",
+                  "Schema": "worker2",
+                  "Alias": "diagnostico_cusco",
+                  "Startup Cost": 100.00,
+                  "Total Cost": 753.50,
+                  "Plan Rows": 2925,
+                  "Plan Width": 4,
+                  "Actual Startup Time": 0.153,
+                  "Actual Total Time": 0.153,
+                  "Actual Rows": 1,
+                  "Actual Loops": 1,
+                  "Output": ["diagnostico_cusco.edad"],
+                  "Remote SQL": "SELECT edad FROM public.diagnostico_cusco"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "Planning Time": 0.092,
+    "Triggers": [
+    ],
+    "Execution Time": 1.484
+  }
+]
+  }
+]
