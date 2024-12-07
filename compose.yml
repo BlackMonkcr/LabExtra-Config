@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  postgres-master:
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: distribuida_db
+      POSTGRES_USER: postgres
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5434:5432"
+    volumes:
+      - pg_master:/var/lib/postgresql/data
+      - ./init-master:/docker-entrypoint-initdb.d
+    networks:
+      - pg_network
+
+  postgres-worker1:
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: distribuida_db
+      POSTGRES_USER: postgres
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5435:5432"
+    volumes:
+      - pg_worker1:/var/lib/postgresql/data
+      - ./init-worker1:/docker-entrypoint-initdb.d
+    networks:
+      - pg_network
+
+  postgres-worker2:
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: distribuida_db
+      POSTGRES_USER: postgres
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5436:5432"
+    volumes:
+      - pg_worker2:/var/lib/postgresql/data
+      - ./init-worker2:/docker-entrypoint-initdb.d
+    networks:
+      - pg_network
+
+networks:
+  pg_network:
+    driver: bridge
+
+volumes:
+  pg_master:
+  pg_worker1:
+  pg_worker2:
