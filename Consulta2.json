@@ -1,0 +1,132 @@
+[
+  {
+    "QUERY PLAN": [
+  {
+    "Plan": {
+      "Node Type": "Aggregate",
+      "Strategy": "Hashed",
+      "Partial Mode": "Simple",
+      "Parallel Aware": false,
+      "Async Capable": false,
+      "Startup Cost": 1724.92,
+      "Total Cost": 1726.92,
+      "Plan Rows": 200,
+      "Plan Width": 34,
+      "Actual Startup Time": 0.772,
+      "Actual Total Time": 0.774,
+      "Actual Rows": 5,
+      "Actual Loops": 1,
+      "Output": ["diagnostico_lima.dni_paciente"],
+      "Group Key": ["diagnostico_lima.dni_paciente"],
+      "Planned Partitions": 0,
+      "HashAgg Batches": 1,
+      "Peak Memory Usage": 40,
+      "Disk Usage": 0,
+      "Plans": [
+        {
+          "Node Type": "Append",
+          "Parent Relationship": "Outer",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Startup Cost": 100.00,
+          "Total Cost": 1710.80,
+          "Plan Rows": 5648,
+          "Plan Width": 34,
+          "Actual Startup Time": 0.198,
+          "Actual Total Time": 0.765,
+          "Actual Rows": 5,
+          "Actual Loops": 1,
+          "Subplans Removed": 0,
+          "Plans": [
+            {
+              "Node Type": "Foreign Scan",
+              "Operation": "Select",
+              "Parent Relationship": "Member",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Relation Name": "diagnostico_lima",
+              "Schema": "worker1",
+              "Alias": "diagnostico_lima",
+              "Startup Cost": 100.00,
+              "Total Cost": 420.64,
+              "Plan Rows": 1412,
+              "Plan Width": 34,
+              "Actual Startup Time": 0.197,
+              "Actual Total Time": 0.198,
+              "Actual Rows": 2,
+              "Actual Loops": 1,
+              "Output": ["diagnostico_lima.dni_paciente"],
+              "Remote SQL": "SELECT dni_paciente FROM public.diagnostico_lima"
+            },
+            {
+              "Node Type": "Foreign Scan",
+              "Operation": "Select",
+              "Parent Relationship": "Member",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Relation Name": "diagnostico_arequipa",
+              "Schema": "worker1",
+              "Alias": "diagnostico_arequipa",
+              "Startup Cost": 100.00,
+              "Total Cost": 420.64,
+              "Plan Rows": 1412,
+              "Plan Width": 34,
+              "Actual Startup Time": 0.172,
+              "Actual Total Time": 0.173,
+              "Actual Rows": 1,
+              "Actual Loops": 1,
+              "Output": ["diagnostico_arequipa.dni_paciente"],
+              "Remote SQL": "SELECT dni_paciente FROM public.diagnostico_arequipa"
+            },
+            {
+              "Node Type": "Foreign Scan",
+              "Operation": "Select",
+              "Parent Relationship": "Member",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Relation Name": "diagnostico_trujillo",
+              "Schema": "worker2",
+              "Alias": "diagnostico_trujillo",
+              "Startup Cost": 100.00,
+              "Total Cost": 420.64,
+              "Plan Rows": 1412,
+              "Plan Width": 34,
+              "Actual Startup Time": 0.197,
+              "Actual Total Time": 0.197,
+              "Actual Rows": 1,
+              "Actual Loops": 1,
+              "Output": ["diagnostico_trujillo.dni_paciente"],
+              "Remote SQL": "SELECT dni_paciente FROM public.diagnostico_trujillo"
+            },
+            {
+              "Node Type": "Foreign Scan",
+              "Operation": "Select",
+              "Parent Relationship": "Member",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Relation Name": "diagnostico_cusco",
+              "Schema": "worker2",
+              "Alias": "diagnostico_cusco",
+              "Startup Cost": 100.00,
+              "Total Cost": 420.64,
+              "Plan Rows": 1412,
+              "Plan Width": 34,
+              "Actual Startup Time": 0.195,
+              "Actual Total Time": 0.195,
+              "Actual Rows": 1,
+              "Actual Loops": 1,
+              "Output": ["diagnostico_cusco.dni_paciente"],
+              "Remote SQL": "SELECT dni_paciente FROM public.diagnostico_cusco"
+            }
+          ]
+        }
+      ]
+    },
+    "Planning Time": 0.110,
+    "Triggers": [
+    ],
+    "Execution Time": 1.319
+  }
+]
+  }
+]
