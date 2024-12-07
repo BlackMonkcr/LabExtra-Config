@@ -1,0 +1,109 @@
+[
+  {
+    "QUERY PLAN": [
+  {
+    "Plan": {
+      "Node Type": "Merge Append",
+      "Parallel Aware": false,
+      "Async Capable": false,
+      "Startup Cost": 400.04,
+      "Total Cost": 735.28,
+      "Plan Rows": 1212,
+      "Plan Width": 246,
+      "Actual Startup Time": 0.959,
+      "Actual Total Time": 0.961,
+      "Actual Rows": 5,
+      "Actual Loops": 1,
+      "Sort Key": ["diagnostico_lima.ciudad"],
+      "Subplans Removed": 0,
+      "Plans": [
+        {
+          "Node Type": "Foreign Scan",
+          "Operation": "Select",
+          "Parent Relationship": "Member",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "diagnostico_lima",
+          "Schema": "worker1",
+          "Alias": "diagnostico_lima",
+          "Startup Cost": 100.00,
+          "Total Cost": 179.27,
+          "Plan Rows": 303,
+          "Plan Width": 246,
+          "Actual Startup Time": 0.261,
+          "Actual Total Time": 0.261,
+          "Actual Rows": 2,
+          "Actual Loops": 1,
+          "Output": ["diagnostico_lima.id", "diagnostico_lima.dni_paciente", "diagnostico_lima.dni_medico", "diagnostico_lima.ciudad", "diagnostico_lima.diagnostico", "diagnostico_lima.peso", "diagnostico_lima.edad", "diagnostico_lima.sexo"],
+          "Remote SQL": "SELECT id, dni_paciente, dni_medico, ciudad, diagnostico, peso, edad, sexo FROM public.diagnostico_lima ORDER BY ciudad ASC NULLS LAST"
+        },
+        {
+          "Node Type": "Foreign Scan",
+          "Operation": "Select",
+          "Parent Relationship": "Member",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "diagnostico_arequipa",
+          "Schema": "worker1",
+          "Alias": "diagnostico_arequipa",
+          "Startup Cost": 100.00,
+          "Total Cost": 179.27,
+          "Plan Rows": 303,
+          "Plan Width": 246,
+          "Actual Startup Time": 0.212,
+          "Actual Total Time": 0.212,
+          "Actual Rows": 1,
+          "Actual Loops": 1,
+          "Output": ["diagnostico_arequipa.id", "diagnostico_arequipa.dni_paciente", "diagnostico_arequipa.dni_medico", "diagnostico_arequipa.ciudad", "diagnostico_arequipa.diagnostico", "diagnostico_arequipa.peso", "diagnostico_arequipa.edad", "diagnostico_arequipa.sexo"],
+          "Remote SQL": "SELECT id, dni_paciente, dni_medico, ciudad, diagnostico, peso, edad, sexo FROM public.diagnostico_arequipa ORDER BY ciudad ASC NULLS LAST"
+        },
+        {
+          "Node Type": "Foreign Scan",
+          "Operation": "Select",
+          "Parent Relationship": "Member",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "diagnostico_trujillo",
+          "Schema": "worker2",
+          "Alias": "diagnostico_trujillo",
+          "Startup Cost": 100.00,
+          "Total Cost": 179.27,
+          "Plan Rows": 303,
+          "Plan Width": 246,
+          "Actual Startup Time": 0.259,
+          "Actual Total Time": 0.259,
+          "Actual Rows": 1,
+          "Actual Loops": 1,
+          "Output": ["diagnostico_trujillo.id", "diagnostico_trujillo.dni_paciente", "diagnostico_trujillo.dni_medico", "diagnostico_trujillo.ciudad", "diagnostico_trujillo.diagnostico", "diagnostico_trujillo.peso", "diagnostico_trujillo.edad", "diagnostico_trujillo.sexo"],
+          "Remote SQL": "SELECT id, dni_paciente, dni_medico, ciudad, diagnostico, peso, edad, sexo FROM public.diagnostico_trujillo ORDER BY ciudad ASC NULLS LAST"
+        },
+        {
+          "Node Type": "Foreign Scan",
+          "Operation": "Select",
+          "Parent Relationship": "Member",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "diagnostico_cusco",
+          "Schema": "worker2",
+          "Alias": "diagnostico_cusco",
+          "Startup Cost": 100.00,
+          "Total Cost": 179.27,
+          "Plan Rows": 303,
+          "Plan Width": 246,
+          "Actual Startup Time": 0.223,
+          "Actual Total Time": 0.223,
+          "Actual Rows": 1,
+          "Actual Loops": 1,
+          "Output": ["diagnostico_cusco.id", "diagnostico_cusco.dni_paciente", "diagnostico_cusco.dni_medico", "diagnostico_cusco.ciudad", "diagnostico_cusco.diagnostico", "diagnostico_cusco.peso", "diagnostico_cusco.edad", "diagnostico_cusco.sexo"],
+          "Remote SQL": "SELECT id, dni_paciente, dni_medico, ciudad, diagnostico, peso, edad, sexo FROM public.diagnostico_cusco ORDER BY ciudad ASC NULLS LAST"
+        }
+      ]
+    },
+    "Planning Time": 0.125,
+    "Triggers": [
+    ],
+    "Execution Time": 1.550
+  }
+]
+  }
+]
